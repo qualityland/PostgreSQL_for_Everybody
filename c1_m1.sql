@@ -76,7 +76,7 @@ DELETE FROM users;
 -- Port:     5432 
 -- Database: pg4e_42afb3a20d 
 -- User:     pg4e_42afb3a20d 
--- Password: pg4e_p_6b35feda958f912
+
 
 
 -- $ psql -h pg.pg4e.com -p 5432 -U pg4e_42afb3a20d pg4e_42afb3a20d
