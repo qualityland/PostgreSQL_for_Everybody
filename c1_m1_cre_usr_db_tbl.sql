@@ -77,8 +77,7 @@ DELETE FROM users;
 -- Database: pg4e_42afb3a20d 
 -- User:     pg4e_42afb3a20d 
 
-
-
+-- connect string:
 -- $ psql -h pg.pg4e.com -p 5432 -U pg4e_42afb3a20d pg4e_42afb3a20d
 
 CREATE TABLE pg4e_debug (
@@ -119,3 +118,22 @@ INSERT INTO ages (name, age) VALUES ('Fiza', 15);
 INSERT INTO ages (name, age) VALUES ('Izabella', 25);
 INSERT INTO ages (name, age) VALUES ('Jema', 34);
 
+
+--------------------
+-- Update Redords --
+--------------------
+UPDATE users SET name = 'Charles' WHERE email = 'csev@umich.edu';
+
+-- !!! this would update EVERY RECORD !!!
+UPDATE users SET name = 'Charles';
+
+
+
+--------------------
+-- Select Redords --
+--------------------
+SELECT * FROM users;
+
+SELECT * FROM users WHERE email = 'csev@umich.edu';
+
+SELECT * FROM users WHERE name LIKE '%e%';
