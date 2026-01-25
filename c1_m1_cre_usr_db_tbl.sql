@@ -1,3 +1,7 @@
+-- Coursera Specialization: PostgreSQL for Everybody
+-- Course 1: Database Design and Basic SQL in PostgreSQL
+-- by: Dr. Charles Severance (Dr. Chuck)
+
 -------------------------
 -- Connect to Database --
 -------------------------
@@ -9,12 +13,15 @@
 -- # \l
 
 
-----------------------------------
--- Creating a User and Database --
-----------------------------------
-
+-----------------
+-- CREATE USER --
+-----------------
 CREATE USER pg4e WITH PASSWORD 'secret';
 
+
+---------------------
+-- CREATE DATABASE --
+---------------------
 CREATE DATABASE people WITH OWNER 'pg4e';
 
 
@@ -39,9 +46,9 @@ CREATE DATABASE people WITH OWNER 'pg4e';
 
 
 
---------------------
--- Create a Table --
---------------------
+------------------
+-- CREATE TABLE --
+------------------
 CREATE TABLE users (
     name VARCHAR(128),
     email VARCHAR(128)
@@ -50,9 +57,9 @@ CREATE TABLE users (
 -- display table users
 -- people=> \d+ users
 
---------------------------------
--- Insert Values into a Table --
---------------------------------
+------------
+-- INSERT --
+------------
 INSERT INTO users (name, email) VALUES ('Chuck', 'csev@umich.edu');
 INSERT INTO users (name, email) VALUES ('Somesh', 'somesh@umich.edu');
 INSERT INTO users (name, email) VALUES ('Caitlin', 'cait@umich.edu');
@@ -60,18 +67,18 @@ INSERT INTO users (name, email) VALUES ('Ted', 'ted@umich.edu');
 INSERT INTO users (name, email) VALUES ('Sally', 'sally@umich.edu');
 
 
----------------------------------
--- Delete Records from a Table --
----------------------------------
+------------
+-- DELETE --
+------------
 DELETE FROM users WHERE email = 'ted@umich.edu';
 
 -- delete all records from a table
 DELETE FROM users;
 
 
-----------------
--- Assignment --
-----------------
+----------------------
+-- Assignment Start --
+----------------------
 -- Host:     pg.pg4e.com 
 -- Port:     5432 
 -- Database: pg4e_42afb3a20d 
@@ -100,40 +107,26 @@ CREATE TABLE pg4e_result (
 );
 
 --------------------
--- Create a Table --
+-- Assignment End --
 --------------------
+
+
+
+------------------
+-- CREATE TABLE --
+------------------
 CREATE TABLE ages ( 
   name VARCHAR(128), 
   age INTEGER
 );
 
 
---------------------------------
--- Insert Values into a Table --
---------------------------------
+------------
+-- INSERT --
+------------
 DELETE FROM ages;
 INSERT INTO ages (name, age) VALUES ('Amnah', 22);
 INSERT INTO ages (name, age) VALUES ('Deon', 19);
 INSERT INTO ages (name, age) VALUES ('Fiza', 15);
 INSERT INTO ages (name, age) VALUES ('Izabella', 25);
 INSERT INTO ages (name, age) VALUES ('Jema', 34);
-
-
---------------------
--- Update Redords --
---------------------
-UPDATE users SET name = 'Charles' WHERE email = 'csev@umich.edu';
-
--- !!! this would update EVERY RECORD !!!
-UPDATE users SET name = 'Charles';
-
-
-
---------------------
--- Select Redords --
---------------------
-SELECT * FROM users;
-
-SELECT * FROM users WHERE email = 'csev@umich.edu';
-
-SELECT * FROM users WHERE name LIKE '%e%';
