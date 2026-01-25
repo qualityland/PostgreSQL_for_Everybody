@@ -83,6 +83,43 @@ SELECT COUNT(*) FROM users WHERE email = 'csev@umich.edu';
 
 
 
+------------------
+-- CREATE TABLE --
+------------------
+CREATE TABLE penguins(
+    id SERIAL PRIMARY KEY,
+    species VARCHAR (30),
+    island VARCHAR (30),
+    bill_length_mm NUMERIC,
+    bill_depth_mm NUMERIC,
+    flipper_length_mm INTEGER,
+    body_mass_g INTEGER,
+    sex VARCHAR (6),
+    year INTEGER);
+
+-----------------
+-- IMPORT DATA --
+-----------------
+COPY penguins(
+species,
+island,
+bill_length_mm,
+bill_depth_mm,
+flipper_length_mm,
+body_mass_g,
+sex,
+year
+)
+FROM '/tmp/penguins.csv'
+WITH (
+FORMAT csv,
+NULL 'NA',
+-- DELIMITER ',',
+--CSV HEADER,
+HEADER
+);
+
+
 ----------------
 -- DATA TYPES --
 ----------------
