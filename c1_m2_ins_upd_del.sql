@@ -125,10 +125,22 @@ HEADER
 ----------------
 
 -- Strings (have character sets):
---   VARCHAR(n) - variable
+--   VARCHAR(n) - variable length
 --   CHAR(n) - fixed space (e.g. sha256sum, ISBN-10)
 --   TEXT - varying length, not used with indexing or sorting
 -- Binary types:
---   BYTEA(n) - up to 255 bytes
--- Numeric fields
+--   BYTEA(n) - up to 255 bytes, small images, not indexed or sorted
+-- Integer
+--   SMALLINT (-32'768, +32'768)
+--   INTEGER (2 billion)
+--   BIGINT (10**18)
+-- Floating Point
+--   REAL(32-bit)
+--   DOUBLE PRECISION (64-bit)
+--   NUMERIC(accuracy, decimal) with specified accuracy and digits after the decimal point
+-- Dates
+--   TIMESTAMP, YYYY-MM-DD HH:MM:SS
+--   DATE, YYYY-MM-DD
+--   TIME, HH:MM:SS
+--   NOW(), built-in PostgreSQL function
 -- AUTO_INCREMENT fields
