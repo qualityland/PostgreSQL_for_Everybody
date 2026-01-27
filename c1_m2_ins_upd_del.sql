@@ -144,3 +144,67 @@ HEADER
 --   TIME, HH:MM:SS
 --   NOW(), built-in PostgreSQL function
 -- AUTO_INCREMENT fields
+--   SERIAL
+
+
+-------------
+-- INDEXES --
+-------------
+-- B-Trees
+--   balanced; levels os smaller fractions of the whole data
+-- Hashes
+--   
+-- re-create table with index and logical key UNIQUE
+DROP TABLE users;
+
+CREATE TABLE users (
+    name VARCHAR(128),
+    email VARCHAR(128) UNIQUE,
+    PRIMARY KEY(id)
+);
+
+-- re-enter data
+INSERT INTO users (name, email) VALUES ('Chuck', 'csev@umich.edu');
+INSERT INTO users (name, email) VALUES ('Somesh', 'somesh@umich.edu');
+INSERT INTO users (name, email) VALUES ('Caitlin', 'cait@umich.edu');
+INSERT INTO users (name, email) VALUES ('Ted', 'ted@umich.edu');
+INSERT INTO users (name, email) VALUES ('Sally', 'sally@umich.edu');
+
+----------------------
+-- Assignment 1 Start --
+----------------------
+CREATE TABLE automagic (
+    id SERIAL,
+    name VARCHAR(32) NOT NULL,
+    height REAL NOT NULL
+);
+
+--------------------
+-- Assignment 1 End --
+--------------------
+
+
+----------------------
+-- Assignment 2 Start --
+----------------------
+-- download csv file
+wget https://www.pg4e.com/tools/sql/library.csv
+curl -O https://www.pg4e.com/tools/sql/library.csv
+
+-- connect to remote DB
+psql -h pg.pg4e.com -p 5432 -U pg4e_42afb3a20d pg4e_42afb3a20d
+
+-- create table
+CREATE TABLE track_raw
+ (title TEXT, artist TEXT, album TEXT,
+  count INTEGER, rating INTEGER, len INTEGER);
+
+-- load data (psql command)
+\copy track_raw(title,artist,album,count,rating,len) FROM 'library.csv' WITH DELIMITER ',' CSV;
+
+-- check results
+SELECT title, album FROM track_raw ORDER BY title LIMIT 3;
+SELECT COUNT(*) FROM track_raw;
+--------------------
+-- Assignment 2 End --
+--------------------
