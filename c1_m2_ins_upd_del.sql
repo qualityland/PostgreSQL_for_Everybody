@@ -184,9 +184,9 @@ CREATE TABLE automagic (
 --------------------
 
 
-----------------------
+------------------------
 -- Assignment 2 Start --
-----------------------
+------------------------
 -- download csv file
 wget https://www.pg4e.com/tools/sql/library.csv
 curl -O https://www.pg4e.com/tools/sql/library.csv
@@ -205,6 +205,6 @@ CREATE TABLE track_raw
 -- check results
 SELECT title, album FROM track_raw ORDER BY title LIMIT 3;
 SELECT COUNT(*) FROM track_raw;
---------------------
+----------------------
 -- Assignment 2 End --
---------------------
+----------------------
