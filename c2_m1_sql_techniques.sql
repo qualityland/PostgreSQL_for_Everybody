@@ -1,3 +1,6 @@
+-------------------------------------
+-- CREATE TABLE with some mistakes --
+-------------------------------------
 -- setup some tables
 CREATE TABLE account (
     id SERIAL,
@@ -51,8 +54,19 @@ ALTER TABLE post ALTER COLUMN content TYPE TEXT;
 --------------------------------
 -- READING COMMANDS FROM FILE --
 --------------------------------
-
+-- see here:
 -- https://www.pg4e.com/lectures/03-Techniques-Load.sql
+-- discuss=> \i 03-Techniques-Load.sql
+-- DELETE 4
+-- ALTER SEQUENCE
+-- ALTER SEQUENCE
+-- ALTER SEQUENCE
+-- ALTER SEQUENCE
+-- INSERT 0 3
+-- INSERT 0 3
+-- INSERT 0 5
+-- ...
+
 
 -----------
 -- DATES --
