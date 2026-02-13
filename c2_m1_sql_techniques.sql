@@ -413,7 +413,6 @@ EXECUTE PROCEDURE trigger_set_timestamp();
 -- Port:     5432 
 -- Database: pg4e_7b5789290e 
 -- User:     pg4e_7b5789290e 
--- Password:  (hide/show copy) 
 -----------------------------------------------------------------
 -- connect string:
 -- psql -h pg.pg4e.com -p 5432 -U pg4e_7b5789290e pg4e_7b5789290e
