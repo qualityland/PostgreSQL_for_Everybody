@@ -110,7 +110,7 @@ body_mass_g,
 sex,
 year
 )
-FROM '/tmp/penguins.csv'
+FROM '/Users/schmis12/tmp/penguins/penguins.csv'
 WITH (
 FORMAT csv,
 NULL 'NA',
@@ -119,6 +119,9 @@ NULL 'NA',
 HEADER
 );
 
+
+-- via \copy
+ \copy penguins(species,island,bill_length_mm,bill_depth_mm,flipper_length_mm,body_mass_g,sex,year) FROM '/Users/schmis12/tmp/penguins/penguins.csv' DELIMITER ',' NULL 'NA' CSV HEADER
 
 ----------------
 -- DATA TYPES --
