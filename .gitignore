@@ -1,1 +1,6 @@
+.gitignore
 credentials.txt
+hiddenlocal.py
+hiddendist.py
+.vscode
+__pycache__

@@ -14,7 +14,8 @@
 # pythonfun table
 
 import psycopg2
-import hidden
+# import hiddendist as hidden
+import hiddenlocal as hidden
 
 # Load the secrets
 secrets = hidden.secrets()
