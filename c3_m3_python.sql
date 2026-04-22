@@ -30,7 +30,8 @@ SELECT * FROM pythonfun;
 
 -- Get a book from Gutenberg
 
--- wget http://www.gutenberg.org/cache/epub/19337/pg19337.txt
+--     wget http://www.gutenberg.org/cache/epub/19337/pg19337.txt
+-- curl -O https://www.gutenberg.org/cache/epub/19337/pg19337.txt
 
 -- wget https://www.pg4e.com/code/loadbook.py
 -- wget https://www.pg4e.com/code/myutils.py

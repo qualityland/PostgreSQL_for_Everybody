@@ -18,7 +18,7 @@ import hidden
 import myutils
 import datecompat
 
-import dateutil.parser as parser # If this import fails - just comment it out
+# import dateutil.parser as parser # If this import fails - just comment it out
 
 def parsemaildate(md) :
     try:

@@ -2,5 +2,6 @@
 credentials.txt
 hiddenlocal.py
 hiddendist.py
+hidden.py
 .vscode
 __pycache__
